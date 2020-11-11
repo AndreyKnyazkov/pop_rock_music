@@ -1,0 +1,102 @@
+.header
+  padding: 15px 35px
+  display: flex
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 21px 0px
+  align-items: center
+  justify-content: space-between
+  &-block
+    &__tablet
+      display: none
+    &__left 
+      display: flex
+      font-size: 14px
+      align-items: center
+      +SemiBold
+      &-menu
+        &-elem
+          &:not(:last-child)
+            margin-right: 50px      
+      &-logo
+        margin-right: 67px
+        &__title
+          text-transform: uppercase     
+          font-size: 13px
+          +Bold     
+        &__subtitle
+          margin-top: 4px
+          +Bold
+          text-transform: uppercase
+          font-size: 18px
+          color: #fccb08
+      &-menu
+        display: flex      
+    &__right
+      display: flex
+      align-items: center
+      +SemiBold
+      font-size: 14px
+      color: #919698
+      &-menu
+        display: flex
+        &-elem
+          margin-right: 50px
+@media ( max-width: 1050px )
+  .header
+    &-block
+      &__left
+        &-menu
+          &-elem
+            margin-right: 40px
+            &:nth-child(3)              
+              display: none
+      &__right
+        &-menu
+          &-elem
+            margin-right: 40px
+            &:nth-child(1)
+              display: none
+@media ( max-width: 844px )
+  .header-block__left-menu-elem
+    margin-right: 30px!important
+  .header-block__right-menu-elem
+    margin-right: 30px!important
+  .header-block__left-logo
+    margin-right: 40px
+@media ( max-width: 768px )
+  .header
+    padding: 15px 23px
+    &-block
+      &__tablet
+        display: block
+        position: relative
+        img
+          margin-top: 3px
+        &::after
+          position: absolute
+          content: ''
+          transform: translate(23px, -24px)
+          height: 71px
+          width: 1px
+          background: #EDF2F5
+      &__left
+        &-logo
+          margin-right: 0
+          &__title
+            text-align: center
+        &-menu
+          display: none
+      &__right
+        &-menu
+          display: none
+@media ( max-width: 480px )
+  .header
+    &-block
+      &__tablet
+        &::after
+          display: none
+      &__left
+        &-logo
+          &__subtitle
+            font-size: 16px
+          &__title
+            font-size: 12px

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Name</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>  
+<!-- C:\Users\Lilice\Desktop\projects\ready-voice-work\src -->
+<section class="headers">
+  <div class="header">
+    <div class="header-block__tablet">
+      <img src="./img/menu-tablet.svg" alt="">
+    </div>
+    <div class="header-block__left">
+      <div class="header-block__left-logo">
+        <div class="header-block__left-logo__title">Музыка для видео</div>
+        <div class="header-block__left-logo__subtitle">Готовая озвучка</div>
+      </div>
+      <div class="header-block__left-menu">
+        <a href="" class="header-block__left-menu-elem">Озвучки</a>
+        <a href="" class="header-block__left-menu-elem">Плейлисты</a>
+        <a href="" class="header-block__left-menu-elem">Авторы</a>
+      </div>
+    </div>
+    <div class="header-block__right">
+      <div class="header-block__right-menu">
+        <a href="" class="header-block__right-menu-elem">Цены</a>
+        <a href="" class="header-block__right-menu-elem">Готовые озвучки</a>
+        <a href="" class="header-block__right-menu-elem">Контакты</a>
+      </div>
+      <div class="header-block__right-cart">
+        <img src="./img/cart.svg" alt="Корзина">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="main-sliders">
+  <div class="main-slider">
+    <div class="main-slider-block" style="background: url(./img/slider/slider-1.jpg)">
+      <div class="main-slider__player">
+        <div class="main-slider__player-block">
+          <div class="main-slider__player__img">
+            <img src="./img/slider/slider-1.jpg" alt="">
+          </div>
+          <div class="main-slider__player-information">
+            <div class="main-slider__player-information__title">Андрей 1</div>
+            <div class="main-slider__player-information__subtitle">Название трека</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-slider-block" style="background: url(./img/slider/slider-2.jpg)">
+      <div class="main-slider__player">
+        <div class="main-slider__player-block">
+          <div class="main-slider__player__img">
+            <img src="./img/slider/slider-2.jpg" alt="">
+          </div>
+          <div class="main-slider__player-information">
+            <div class="main-slider__player-information__title">Алексей 1 </div>
+            <div class="main-slider__player-information__subtitle">Название трека</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/jquery.maskedinput.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/plugings.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('.main-slider').slick({
+      dots: false,
+      arrows: true,
+      infinite: true,
+      speed: 500,
+      fade: true,
+      cssEase: 'linear',
+      responsive: [
+        {
+          breakpoint: 820,
+          settings: {
+            arrows: false
+          }
+        }
+      ]
+    });
+  });
+</script>
+
+</body>
+</html>
