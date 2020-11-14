@@ -1,0 +1,37 @@
+.video
+  display: flex
+  &s
+    position: relative
+    &-2      
+  &-background
+    width: 50%
+    &::after
+      content: ''
+      position: absolute
+      min-width: 7px
+      min-height: 100%
+      background: #fff
+      transform: translateX(-5px)
+    video
+      width: 100%
+  &-2
+    &-block
+      position: relative
+      max-width: 340px
+      margin-left: auto
+      transform: translate(16px, -94px)
+      &__title
+        font-size: 40px
+        line-height: 47px
+      &__subtitle
+        margin-top: 25px
+        font-size: 18px
+        color: #888888
+        line-height: 150%
+  &-img
+    min-width: 65%
+    position: absolute
+    top: 37px
+    transform: translateX(34px)
+@media0 ( max-width:  )
+  

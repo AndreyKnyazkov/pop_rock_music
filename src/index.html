@@ -68,6 +68,71 @@
     
   </div>
 </section>
+
+<section class="covers">
+  <div class="main-container">
+    <div class="cover">
+      <div class="cover-left">
+        <div class="cover-left__name">Плейлисты</div>
+        <div class="cover-left__title">Найдите лучший звук для своего проекта</div>
+        <div class="cover-left__subtitle">Готовые озвучки, созданные с учетом вашего проекта</div>
+      </div>
+      <div class="cover-right">
+        <img src="./img/play.svg" alt="Play">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="examples">
+  <div class="example-container">
+    <div class="example-title">Просто посмотрите, какие крутые работы получаются</div>
+    <div class="example-slider">
+      <div class="example-slider__block" style="background: url(./img/slider/example-slider-1.jpg);">
+        <span class="example-slider__block-during">01:30</span>
+      </div>
+      <div class="example-slider__block" style="background: url(./img/slider/example-slider-2.jpg);">
+        <span class="example-slider__block-during">05:22</span>
+      </div>
+      <div class="example-slider__block" style="background: url(./img/slider/example-slider-3.jpg);">
+        <span class="example-slider__block-during">02:22</span>
+      </div>
+      <div class="example-slider__block" style="background: url(./img/slider/example-slider-4.jpg);">
+        <span class="example-slider__block-during">06:12</span>
+      </div>
+      <div class="example-slider__block" style="background: url(./img/slider/example-slider-5.jpg);">
+        <span class="example-slider__block-during">05:21</span>
+      </div>
+      <div class="example-slider__block" style="background: url(./img/slider/example-slider-6.jpg);">
+        <span class="example-slider__block-during">01:57</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="videos">
+  <div class="video">
+    <div class="video-background">
+      <video id="my-video"  playsinline autoplay muted loop>
+      <source src="./img/video-cover-hevc.mp4" type="video/mp4; codecs=hevc">
+      <source src="./img/video-cover-webm.webm" type="video/webm">
+      <source src="./img/video-cover-mp4.mp4" type="video/mp4">
+      </video>
+  </div>
+
+  <div class="video-img">
+    <img class="video-img" src="./img/mockup-video.png" alt="">
+  </div>
+</section>
+<section class="videos-2">
+    <div class="example-container">
+      <div class="video-2-block">
+        <h2 class="video-2-block__title">Посмотрите наши плейлисты</h2>
+        <div class="video-2-block__subtitle">Откройте для себя тщательно подобранный список групп, композиторов и артистов мирового уровня, к которому легко получить доступ с помощью инновационных инструментов и функций.</div>
+      </div>
+    </div>
+</section>
+
+
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/jquery.validate.min.js"></script>
@@ -91,6 +156,30 @@
           breakpoint: 820,
           settings: {
             arrows: false
+          }
+        }
+      ]
+    });
+    $('.example-slider').slick({
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      dots: false,
+      arrows: true,
+      speed: 800,
+      cssEase: 'linear',
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
           }
         }
       ]

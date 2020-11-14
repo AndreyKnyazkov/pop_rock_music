@@ -1,0 +1,18 @@
+<section class="videos">
+  <div class="video">
+    <div class="video-background">
+      <video id="my-video" loop="" autoplay="">
+      <!-- <source src="https://cdn.musicbed.com/video/upload/vc_h265/static/welcome/general/Play-Button-Video.mp4" type="video/mp4; codecs=hevc"> -->
+      <source src="./img/video-cover.webm" type="video/webm">
+      <!-- <source src="https://cdn.musicbed.com/video/upload/vc_auto/static/welcome/general/Play-Button-Video.mp4" type="video/mp4"> -->
+      </video>
+  </div>
+  <div class="video-block">
+    <h2 class="video-block__title">Посмотрите наши плейлисты</h2>
+    <div class="video-block__subtitle">Откройте для себя тщательно подобранный список групп, композиторов и артистов мирового уровня, к которому легко получить доступ с помощью инновационных инструментов и функций.</div>
+  </div>
+  </div>
+  <div class="video-img">
+    <img class="video-img" src="./img/mockup-video.png" alt="">
+  </div>
+</section>

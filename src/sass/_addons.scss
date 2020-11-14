@@ -1,7 +1,8 @@
 body {
   font-feature-settings: 'pnum' on, 'lnum' on, 'kern' off;
+  margin-bottom: 200px;
 }
-button.slick-prev.slick-arrow {
+.main-sliders button.slick-prev.slick-arrow {
   cursor: pointer;
   z-index: 1;
   position: absolute;
@@ -13,7 +14,7 @@ button.slick-prev.slick-arrow {
   background: #F5F5F5;
   transform: translate(-73px, 0px);
 }
-button.slick-next.slick-arrow {
+.main-sliders button.slick-next.slick-arrow {
   cursor: pointer;
   z-index: 1;
   position: absolute;
@@ -24,18 +25,70 @@ button.slick-next.slick-arrow {
   background: #FFF;
   transform: translate(0px, -73px);
 }
-button.slick-next.slick-arrow::after {
-  content: url('../img/slider/arrow.svg');
-  transform: rotate(180deg);
+.main-sliders button.slick-next.slick-arrow::after {
+  content: url('../img/slider/arrow-next.svg');
 }
-button.slick-prev.slick-arrow::after {
+.main-sliders button.slick-prev.slick-arrow::after {
   content: url('../img/slider/arrow-prev.svg')
 }
 @media ( max-width: 820px) {
-  button.slick-prev.slick-arrow {
+  .main-sliders button.slick-prev.slick-arrow {
     display: none;
   }
-    button.slick-next.slick-arrow {
+    .main-sliders button.slick-next.slick-arrow {
       display: none;
     }
+}
+
+.example-slider button.slick-prev.slick-arrow  {
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+  font-size: 0;
+  background: none;
+  transform: translateX(-53px)
+}
+
+.example-slider button.slick-next.slick-arrow {
+  cursor: pointer;
+  right: 0;
+  z-index: 1;
+  position: absolute;
+  font-size: 0;
+  background: none;
+  transform: translateX(43px)
+}
+
+.example-slider button.slick-prev.slick-arrow::after {
+  content: url('../img/slider/example-arrow-prev.svg');
+}
+
+.example-slider button.slick-next.slick-arrow::after {
+  content: url('../img/slider/example-arrow-next.svg');
+}
+
+@media (max-width: 1350px) {
+  .example-slider button.slick-prev.slick-arrow {
+    transform: translateX(-44px)
+  }
+
+  .example-slider button.slick-next.slick-arrow {
+    transform: translateX(34px)
+  }
+}
+@media (max-width: 600px) {
+  .example-slider button.slick-prev.slick-arrow::after {
+    content: url('../img/slider/mobile-example-arrow-prev.svg');
+  }
+
+  .example-slider button.slick-next.slick-arrow::after {
+    content: url('../img/slider/mobile-example-arrow-next.svg');
+  }
+  .example-slider button.slick-prev.slick-arrow {
+    transform: translateX(-34px)
+  }
+
+  .example-slider button.slick-next.slick-arrow {
+    transform: translateX(24px)
+  }
 }
