@@ -8,10 +8,10 @@
     &::after
       content: ''
       position: absolute
-      min-width: 7px
+      min-width: 4px
       min-height: 100%
       background: #fff
-      transform: translateX(-5px)
+      transform: translateX(-4px)
     video
       width: 100%
   &-2
@@ -33,5 +33,27 @@
     position: absolute
     top: 37px
     transform: translateX(34px)
-@media0 ( max-width:  )
-  
+@media ( max-width: 1100px )
+  .video
+    &-2
+      &-block
+        max-width: 312px
+@media ( max-width: 1000px )
+  .video
+    &-2
+      &-block
+        max-width: 260px
+    &-background
+@media ( max-width: 900px )
+  .video
+    &-2
+      &-block
+        margin-left: initial
+        margin: auto
+        max-width: 340px
+        transform: translate(0px, 0px)
+    &-background
+      width: 100%
+    &-img
+      width: 100%
+      transform: translateX(0px)

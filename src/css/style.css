@@ -2005,11 +2005,11 @@ img {
 .video-background::after {
   content: '';
   position: absolute;
-  min-width: 7px;
+  min-width: 4px;
   min-height: 100%;
   background: #fff;
-  -webkit-transform: translateX(-5px);
-          transform: translateX(-5px);
+  -webkit-transform: translateX(-4px);
+          transform: translateX(-4px);
 }
 
 .video-background video {
@@ -2044,5 +2044,33 @@ img {
           transform: translateX(34px);
 }
 
-@media0 ( max-width:  );
+@media (max-width: 1100px) {
+  .video-2-block {
+    max-width: 312px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .video-2-block {
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 900px) {
+  .video-2-block {
+    margin-left: initial;
+    margin: auto;
+    max-width: 340px;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  .video-background {
+    width: 100%;
+  }
+  .video-img {
+    width: 100%;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
 /*# sourceMappingURL=style.css.map */
