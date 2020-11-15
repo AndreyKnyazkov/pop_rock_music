@@ -1,0 +1,42 @@
+.preview
+  margin-top: 90px
+  text-align: center
+  &-button
+    margin-top: 75px
+  &-block
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    &__playlist      
+      img
+        width: 300px
+        object-fit: cover
+        border-radius: 3px
+@media ( max-width: 1300px )
+  .preview
+    &-block
+      &__playlist
+        img
+          width: 250px
+@media ( max-width: 1050px )
+  .preview
+    &-block
+      &__playlist
+        flex-basis: 50%
+        display: flex
+        justify-content: center
+        margin-top: 15px
+@media ( max-width: 550px )
+  .preview
+    &-block
+      &__playlist
+        flex-basis: 100%
+        img
+          width: 300px
+    &-button
+      width: 300px
+      margin-top: 35px
+@media ( max-width: 330px )
+  .preview
+    &-button
+      width: 100%
