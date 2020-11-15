@@ -1,5 +1,6 @@
 .video
   display: flex
+  margin-top: 125px
   &s
     position: relative
     &-2      
@@ -28,6 +29,8 @@
         font-size: 18px
         color: #888888
         line-height: 150%
+      &__button
+        margin-top: 37px
   &-img
     min-width: 65%
     position: absolute
@@ -46,14 +49,30 @@
     &-background
 @media ( max-width: 900px )
   .video
+    margin-top: 100px
     &-2
       &-block
         margin-left: initial
         margin: auto
-        max-width: 340px
+        max-width: 350px
+        padding-top: 108px
         transform: translate(0px, 0px)
+        &__subtitle
+          margin-top: 20px  
+        &__button
+          width: 100%      
     &-background
       width: 100%
+      video 
+        width: 81%
     &-img
       width: 100%
       transform: translateX(0px)
+      top: 9%
+@media ( max-width: 600px )
+  .video
+    &-2
+      &-block
+        max-width: 440px
+        padding-left: 40px
+        padding-right: 40px
