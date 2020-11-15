@@ -2108,7 +2108,7 @@ img {
 
 @media (max-width: 1000px) {
   .video-2-block {
-    max-width: 260px;
+    max-width: 275px;
   }
 }
 
@@ -2229,17 +2229,135 @@ img {
 
 .gallery {
   width: 100%;
+  margin-top: 100px;
+  padding-left: 23px;
+  padding-right: 23px;
+}
+
+.gallery-block-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.gallery-block-3 img {
+  width: 20%;
 }
 
 .gallery-block-1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 23px;
-  padding-right: 23 px;
 }
 
 .gallery-block-1 img {
   width: 20%;
+}
+
+.gallery-block-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.gallery-block-2 img {
+  width: 20%;
+}
+
+.gallery-block-2__text {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.gallery-block-2__text-information {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+.gallery-block-2__text-information__title {
+  font-size: 30px;
+}
+
+.gallery-block-2__text-information__subtitle {
+  font-size: 19px;
+  color: #888888;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+@media (max-width: 1440px) {
+  .gallery-block-2__text-information__title {
+    font-size: 24px;
+  }
+  .gallery-block-2__text-information__subtitle {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .gallery-block-1 img {
+    width: 33.33%;
+  }
+  .gallery-block-1 img:nth-child(3) {
+    display: none;
+  }
+  .gallery-block-1 img:nth-child(5) {
+    display: none;
+  }
+  .gallery-block-2__text {
+    width: 66.66%;
+  }
+  .gallery-block-2 img {
+    width: 33.33%;
+  }
+  .gallery-block-2 img:nth-child(2) {
+    display: none;
+  }
+  .gallery-block-2 img:nth-child(4) {
+    display: none;
+  }
+  .gallery-block-3 img {
+    width: 33.33%;
+  }
+  .gallery-block-3 img:nth-child(3) {
+    display: none;
+  }
+  .gallery-block-3 img:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-block-1 img {
+    width: 50%;
+  }
+  .gallery-block-1 img:nth-child(1) {
+    display: none;
+  }
+  .gallery-block-2__text {
+    width: 100%;
+  }
+  .gallery-block-2__text-information {
+    width: 95%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  .gallery-block-2 img {
+    width: 50%;
+  }
+  .gallery-block-2 img:nth-child(1) {
+    display: none;
+  }
+  .gallery-block-3 img {
+    width: 50%;
+  }
+  .gallery-block-3 img:nth-child(1) {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
