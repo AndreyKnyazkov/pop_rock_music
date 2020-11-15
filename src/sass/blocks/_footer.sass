@@ -1,0 +1,64 @@
+.footer
+  display: flex
+  margin-top: 66px
+  &-title
+    text-transform: uppercase
+    font-size: 14px
+    line-height: 16px
+    +SemiBold
+  &-item
+    font-size: 13px
+    color: #919698
+    margin-top: 15px
+  &-left
+    padding-top: 18px
+    text-align: center
+    flex-basis: 50%
+    border-right: 1px solid #E0E6E9
+    &__social
+      margin-top: 23px
+      display: flex
+      justify-content: center
+      a:not(:last-child)
+        display: inline-block
+        margin-right: 18px
+    &__title
+      font-size: 26px
+      +SemiBold
+    &__description
+      font-size: 13px
+      margin-top: 9px
+    &__button
+      padding: 10px 19px
+      border-radius: 3px
+      display: inline-block
+      font-size: 12px
+      background: #1AA6B3
+      +Bold
+      color: #fff 
+      margin-top: 23px
+  &-right 
+    flex-basis: 50%
+    &-elem
+      padding-top: 18px
+      padding-left: 43px      
+      display: flex
+      justify-content: space-around
+@media ( max-width: 1240px )
+  .footer
+    flex-direction: column
+    &-left
+      flex-basis: 100%
+      border: none
+      padding-bottom: 50px
+    &-right
+      flex-basis: 100%
+      padding-left: 0
+      border-top: 1px solid #E0E6E9
+      width: 95%
+      margin: auto
+      &-elem 
+        max-width: 600px
+        margin: auto
+        padding-left: 0
+        padding-top: 50px
