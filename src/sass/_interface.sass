@@ -8,6 +8,9 @@ img
 .example-container
   max-width: 1350px
   margin: auto
+.example-container-slider
+  max-width: 1350px
+  margin: auto
 .interface-btn-1
   padding: 15px 33px
   height: 45px
@@ -20,12 +23,21 @@ img
   color: #fff
   background: #1AA6B3
   line-height: 90%
+@media ( max-width: 600px )
+  .interface-btn-1
+    font-size: 14px
+    line-height: 110%
 @media ( max-width: 1460px )
   .main-container
     padding-left: 13px
     padding-right: 13px
   .example-container
     width: 87%
+  .example-container-slider
+    width: 87%
+@media ( max-width: 1460px )
+  .example-container-slider
+    width: 80%
 .container
   width: 1140px
   margin: auto
