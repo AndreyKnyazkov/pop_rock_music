@@ -1,6 +1,7 @@
 .footer
   display: flex
   margin-top: 66px
+  margin-bottom: 50px
   &-title
     text-transform: uppercase
     font-size: 14px
@@ -46,6 +47,7 @@
       justify-content: space-around
 @media ( max-width: 1240px )
   .footer
+    margin-bottom: 30px
     flex-direction: column
     &-left
       flex-basis: 100%
@@ -62,3 +64,22 @@
         margin: auto
         padding-left: 0
         padding-top: 50px
+@media ( max-width: 570px )
+  .footer
+    &-left      
+    &-item
+      flex-basis: 50%  
+      margin-top: 25px    
+      &-block
+        flex-wrap: wrap
+        display: flex
+    &-right
+      border: none
+      &-elem
+        padding-top: 0
+      &-block
+        border-top: 1px solid #E0E6E9
+        padding-top: 55px
+        padding-bottom: 55px
+      &-elem
+        flex-direction: column
