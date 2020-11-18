@@ -33,9 +33,9 @@ const tabs = (mainBlock, titleTab, cssMain, numberOfOpenTab) => {
   });
 };
 //tabs
-tabs('.js-tab-main-block', '.tab-js-title', '.defect-tabs__block', 1);
+//tabs('.js-tab-main-block', '.tab-js-title', '.defect-tabs__block', 1);
 //menu
-tabs('.js-tab-main-block', '.tab-js-title', '.menu-mobile-block__item');
+//tabs('.js-tab-main-block', '.tab-js-title', '.menu-mobile-block__item');
 
 /* modal popup */
 
@@ -81,8 +81,64 @@ popupOpen.forEach((el, i, h) => {
 };
 // 1 - class to open popup
 // 2 - number of popup in HTML
-popups('.popup-open', '.popup-number-1');
-popups('.popup-open-2', '.popup-number-2');
+//popups('.popup-open', '.popup-number-1');
+//popups('.popup-open-2', '.popup-number-2');
+
+// An accordeon plugin
+
+const accordeon = (top, topActive, bottom, bottomActive) => {
+  const accItemToClick = document.querySelectorAll(top),
+      accItemToShow = document.querySelectorAll(bottom);
+
+accItemToClick.forEach((elem, index, node) => {
+  elem.addEventListener('mouseenter', (event) => {
+    let addTransition = document.querySelectorAll('.playlist-about__tabs-item span')[index];
+    addTransition.classList.add('playlist-about__tabs-item_span');
+  });
+
+  elem.addEventListener('mouseleave', (event) => {
+    let removeTransition = document.querySelectorAll('.playlist-about__tabs-item span')[index];
+    removeTransition.classList.remove('playlist-about__tabs-item_span');
+  });
+
+  elem.addEventListener('click', (event) => {
+    //remove all classes
+    accItemToClick.forEach((el, ind, n) => {
+      el.classList.remove(topActive);
+    });
+    accItemToShow.forEach((el, ind, n) => {
+      el.classList.remove(bottomActive);
+    });
+    console.log();
+    accItemToShow[index].classList.add(bottomActive);
+    //add choosen class
+    elem.classList.add(topActive);
+  });
+});
+};
+
+accordeon('.playlist-about__tabs-item', 'playlist-about__tabs-item_active', '.playlist', 'playlist_active');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //tabs('.js-tab-main-block', '.tab-js-title', 'defect-tabs__block');
 

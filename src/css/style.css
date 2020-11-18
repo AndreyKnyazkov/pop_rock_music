@@ -1511,6 +1511,11 @@ img {
   max-width: 100%;
 }
 
+.bgc-help {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
 .main-container {
   max-width: 1350px;
   margin: auto;
@@ -2529,5 +2534,235 @@ img {
 
 .information-right {
   margin-top: 25px;
+}
+
+.playlist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: none;
+}
+
+.playlist_active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.playlist-about {
+  margin-bottom: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.playlist-about__title {
+  font-size: 70px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+.playlist-about__tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  margin-left: 140px;
+  border-bottom: 2px solid #EDF2F5;
+}
+
+.playlist-about__tabs-item {
+  color: #919698;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.playlist-about__tabs-item_span {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #000;
+}
+
+.playlist-about__tabs-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.playlist-about__tabs-item_active {
+  color: #000000;
+  border-bottom: 2px solid #1AA6B3;
+  height: inherit;
+}
+
+.playlist-about__tabs-item:hover {
+  height: inherit;
+  border-bottom: 2px solid #1AA6B3;
+}
+
+.playlists {
+  background: #F7FAFC;
+}
+
+.playlist-container {
+  padding-left: 90px;
+  padding-right: 90px;
+  padding-top: 88px;
+  padding-bottom: 190px;
+}
+
+.playlist-item {
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  border-radius: 3px;
+  height: 265px;
+  padding: 7px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.playlist-item:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.playlist-item__title {
+  border-radius: 3px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.playlist-item__title-text {
+  font-size: 46px;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  margin-top: auto;
+  margin-left: 32px;
+  margin-bottom: 23px;
+}
+
+@media (max-width: 1800px) {
+  .playlist-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33%;
+            flex: 0 0 33%;
+  }
+}
+
+@media (max-width: 1245px) {
+  .playlist-container {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 43px;
+    padding-bottom: 90px;
+  }
+  .playlist-about {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+    margin-bottom: 50px;
+  }
+  .playlist-about__tabs {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 1420px) {
+  .playlist-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    height: 350px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .playlist-item {
+    height: 310px;
+  }
+}
+
+@media (max-width: 900px) {
+  .playlist-about__title {
+    font-size: 7.29167vw;
+  }
+  .playlist-item {
+    height: 260px;
+  }
+  .playlist-item__title-text {
+    font-size: 5vw;
+    line-height: 5vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .playlist-item {
+    height: 225px;
+  }
+  .playlist-about {
+    margin-bottom: 50px;
+  }
+  .playlist-about__tabs {
+    height: 27px;
+  }
+  .playlist-about__tabs-item {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .playlist-item {
+    height: 190px;
+  }
+}
+
+@media (max-width: 600px) {
+  .playlist-about__title {
+    font-size: 45px;
+  }
+  .playlist-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    height: 320px;
+  }
+  .playlist-item__title-text {
+    font-size: 30px;
+    line-height: initial;
+  }
+}
+
+@media (max-width: 500px) {
+  .playlist-item {
+    height: 240px;
+  }
+  .playlist-about__tabs {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+@media (max-width: 400px) {
+  .playlist-item {
+    height: 200px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
