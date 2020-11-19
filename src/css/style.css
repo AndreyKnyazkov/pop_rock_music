@@ -567,7 +567,6 @@ body {
   position: absolute;
   font-size: 0;
   background: none;
-  left: -53px;
   margin-top: 79px;
 }
 
@@ -578,23 +577,26 @@ body {
   position: absolute;
   font-size: 0;
   background: none;
-  right: -43px;
   margin-top: 79px;
 }
 
 .example-slider button.slick-prev.slick-arrow::after {
+  position: absolute;
   content: url("../img/slider/example-arrow-prev.svg");
+  left: -53px;
 }
 
 .example-slider button.slick-next.slick-arrow::after {
+  position: absolute;
   content: url("../img/slider/example-arrow-next.svg");
+  right: -43px;
 }
 
 @media (max-width: 1350px) {
-  .example-slider button.slick-prev.slick-arrow {
+  .example-slider button.slick-prev.slick-arrow::after {
     left: -44px;
   }
-  .example-slider button.slick-next.slick-arrow {
+  .example-slider button.slick-next.slick-arrow::after {
     right: -34px;
   }
 }
@@ -602,14 +604,10 @@ body {
 @media (max-width: 600px) {
   .example-slider button.slick-prev.slick-arrow::after {
     content: url("../img/slider/mobile-example-arrow-prev.svg");
+    left: -34px;
   }
   .example-slider button.slick-next.slick-arrow::after {
     content: url("../img/slider/mobile-example-arrow-next.svg");
-  }
-  .example-slider button.slick-prev.slick-arrow {
-    left: -34px;
-  }
-  .example-slider button.slick-next.slick-arrow {
     right: -24px;
   }
 }
