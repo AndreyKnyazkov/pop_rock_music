@@ -1509,6 +1509,7 @@ body.compensate-for-scrollbar {
 
 img {
   max-width: 100%;
+  min-height: auto;
 }
 
 .bgc-help {
@@ -2247,6 +2248,9 @@ img {
 
 .gallery-block-3 img {
   width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .gallery-block-1 {
@@ -2257,6 +2261,9 @@ img {
 
 .gallery-block-1 img {
   width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .gallery-block-2 {
@@ -2267,6 +2274,9 @@ img {
 
 .gallery-block-2 img {
   width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .gallery-block-2__text {
