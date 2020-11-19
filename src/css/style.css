@@ -2158,6 +2158,9 @@ img {
   }
   .video-background video {
     width: 81%;
+    -webkit-clip-path: polygon(98% 49%, 0 0, 0 99%);
+            clip-path: polygon(98% 49%, 0 0, 0 99%);
+    background: #fff;
   }
   .video-img {
     width: 100%;
