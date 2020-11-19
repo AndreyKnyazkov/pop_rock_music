@@ -48,7 +48,7 @@ body {
   font-size: 0;
   background: none;
   //transform: translateX(-53px)
-  margin-left: -53px;
+  left: -53px;
   margin-top: 79px;
 }
 
@@ -60,7 +60,7 @@ body {
   font-size: 0;
   background: none;
   //transform: translateX(43px);
-  margin-right: -43px;
+  right: -43px;
   margin-top: 79px;
 }
 
@@ -75,12 +75,12 @@ body {
 @media (max-width: 1350px) {
   .example-slider button.slick-prev.slick-arrow {
     //transform: translateX(-44px);
-    margin-left: -44px;
+    left: -44px;
   }
 
   .example-slider button.slick-next.slick-arrow {
     //transform: translateX(34px);
-    margin-right: -34px;
+    right: -34px;
   }
 }
 @media (max-width: 600px) {
@@ -93,11 +93,11 @@ body {
   }
   .example-slider button.slick-prev.slick-arrow {
     //transform: translateX(-34px);
-    margin-left: -34px
+    left: -34px;
   }
 
   .example-slider button.slick-next.slick-arrow {
     //transform: translateX(24px);
-    margin-right: -24px
+    right: -24px
   }
 }

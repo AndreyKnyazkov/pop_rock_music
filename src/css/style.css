@@ -567,7 +567,7 @@ body {
   position: absolute;
   font-size: 0;
   background: none;
-  margin-left: -53px;
+  left: -53px;
   margin-top: 79px;
 }
 
@@ -578,7 +578,7 @@ body {
   position: absolute;
   font-size: 0;
   background: none;
-  margin-right: -43px;
+  right: -43px;
   margin-top: 79px;
 }
 
@@ -592,10 +592,10 @@ body {
 
 @media (max-width: 1350px) {
   .example-slider button.slick-prev.slick-arrow {
-    margin-left: -44px;
+    left: -44px;
   }
   .example-slider button.slick-next.slick-arrow {
-    margin-right: -34px;
+    right: -34px;
   }
 }
 
@@ -607,10 +607,10 @@ body {
     content: url("../img/slider/mobile-example-arrow-next.svg");
   }
   .example-slider button.slick-prev.slick-arrow {
-    margin-left: -34px;
+    left: -34px;
   }
   .example-slider button.slick-next.slick-arrow {
-    margin-right: -24px;
+    right: -24px;
   }
 }
 
