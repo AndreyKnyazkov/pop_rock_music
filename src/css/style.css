@@ -2084,10 +2084,14 @@ img {
   background: #fff;
   -webkit-transform: translateX(-4px);
           transform: translateX(-4px);
+  -webkit-clip-path: polygon(98% 49%, 0 0, 0 99%);
+          clip-path: polygon(98% 49%, 0 0, 0 99%);
 }
 
 .video-background video {
   width: 100%;
+  -webkit-clip-path: polygon(98% 49%, 0 0, 0 99%);
+          clip-path: polygon(98% 49%, 0 0, 0 99%);
 }
 
 .video-2-block {
