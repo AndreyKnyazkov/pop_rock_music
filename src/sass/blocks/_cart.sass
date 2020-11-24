@@ -1,0 +1,224 @@
+.cart    
+  &s
+    padding-top: 88px
+    background: #F7FAFC
+    padding-bottom: 190px
+  &-title
+    font-size: 70px
+    padding-bottom: 50px
+    +Bold
+  &-container
+    margin: auto
+    max-width: 1000px
+    padding: 0px 30px 
+  &-block
+    display: flex
+    &__left
+      margin-top: 15px
+      margin-right: 50px
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08)
+      padding: 25px 
+      border: 1px solid #E0E6E9
+      border-radius: 3px
+      background: #fff
+      width: 50%
+      height: max-content
+      +Bold
+      &-title
+        font-size: 26px
+        padding-bottom: 10px
+        +Bold
+      &-item
+        padding-top: 20px
+        padding-bottom: 20px
+        border-bottom: 1px solid #E0E6E9
+        &__product    
+          display: flex
+          align-items: center    
+          justify-content: space-between  
+          &-img       
+            display: flex  
+            align-items: center   
+            &__about
+              margin-left: 14px
+            img
+              width: 60px
+              height: 60px
+              object-fit: cover
+              border-radius: 3px
+            &__title
+              font-size: 18px
+              margin-bottom: 11px              
+            &__description
+              font-size: 12px
+              color: #91969E
+          &-price
+            text-align: right
+            &__title
+              font-size: 18px
+              margin-bottom: 11px
+            &__remove
+              font-size: 12px
+              color: #91969E
+      &-total
+        padding-top: 12px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        &__result
+          font-size: 42px
+          display: flex          
+          span
+            font-size: 12px
+            margin-top: 8px
+            margin-right: 3px            
+    &__right
+      width: 50%
+      margin-left: 50px
+      &-needto
+        +Bold
+        margin-bottom: 25px
+        &__title
+          font-size: 26px
+        &__description
+          margin-top: 8px
+          font-size: 14px
+          color: #91969E
+      &-information
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08)
+        border: 1px solid #E0E6E9
+        background: #fff
+        padding: 25px
+        &__email
+          margin-top: 20px
+        &__phone
+          margin-top: 20px
+        &__social
+          margin-top: 20px
+        input
+          border: 2px solid #E6E6E6
+          border-radius: 3px
+          background: #ffffff
+          height: 31px
+          color: #717171
+          font-size: 16px
+          box-shadow: 0px 4px 4px rgba(102, 102, 102, 0.08)
+        label
+          color: #787878
+          font-size: 14px
+          display: flex
+          flex-direction: column
+          span
+            margin-bottom: 5px        
+        &__firstlast
+          display: flex
+          justify-content: space-between
+        &__firstname
+          display: flex
+          flex-direction: column
+          margin-right: 5px
+          width: 100%
+        &__lastname
+          display: flex
+          flex-direction: column
+          margin-left: 5px
+          width: 100%
+      &-button
+        text-align: center
+        margin-top: 33px
+        button
+          cursor: pointer
+          text-align: center
+          background: #27282A
+          +Bold
+          font-size: 18px
+          border-radius: 3px
+          color: #fff
+          padding: 11px 83px
+          text-transform: uppercase
+          letter-spacing: 0.5px
+@media ( max-width: 1000px )
+  .cart
+    &-title
+      font-size: 50px
+      padding-bottom: 30px
+    &-block
+      &__left
+        margin-right: 25px
+      &__right
+        margin-left: 25px
+@media ( max-width: 900px )
+  .cart
+    &s
+      padding-top: 30px
+      padding-bottom: 100px
+    &-title
+      padding-bottom: 20px
+    &-block
+      flex-direction: column
+      &__left
+        margin-right: 0
+        width: 100%
+        &-title
+          font-size: 3.17073vw
+      &__right
+        margin-left: 0
+        width: 100%
+        &-needto
+          margin-top: 40px
+          &__title
+            font-size: 3.17073vw
+@media ( max-width: 800px )
+  .cart
+    &-block
+      &__right
+        &-button
+          button
+            width: 100%
+            padding: 10px 0px
+      &__left
+        &-item
+          &__product
+            &-img
+              &__title
+                font-size: 15px
+              &__description
+                font-size: 10px
+@media ( max-width: 630px )
+  .cart
+    &-block
+      flex-direction: column
+      &__left
+        &-title
+          font-size: 20px
+      &__right
+        &-needto
+          margin-top: 40px
+          &__title
+           font-size: 20px
+@media ( max-width: 500px )
+  .cart
+    &-block
+      &__right              
+        &-button
+          button
+            font-size: 16px
+        &-information
+          &__firstname
+            max-width: calc( 50% - 5px )
+          &__lastname
+            max-width: calc( 50% - 5px )
+        &-needto
+          &__description
+            font-size: 12px
+      &__left        
+        &-item
+          &__product
+            &-img
+              &__title
+                font-size: 14px
+            &-price
+              &__title
+                font-size: 14px
+              &__remove
+                font-size: 10px
