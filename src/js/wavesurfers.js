@@ -25,11 +25,11 @@ var ChromeSamples = {
 };
 
 
-// if (!navigator.mediaSession) {
-//   ChromeSamples.setStatus('The Media Session API is not yet available. Try Chrome for Android.');
-// } else {
-//   ChromeSamples.setStatus('yay it works');
-// }
+if (!navigator.mediaSession) {
+  ChromeSamples.setStatus('The Media Session API is not yet available. Try Chrome for Android.');
+} else {
+  ChromeSamples.setStatus('yay it works');
+}
 // This prevents unnecessary errors when Media Session API is not available.
 navigator.mediaSession = navigator.mediaSession || {};
 navigator.mediaSession.setActionHandler = navigator.mediaSession.setActionHandler || function () {};
@@ -39,7 +39,8 @@ window.MediaMetadata = window.MediaMetadata || function () {};
 
 
 $(window).resize(function () {
-  wavesurfer.empty();
+  //off track when window resize
+  //wavesurfer.empty();
   wavesurfer.drawBuffer();
 });
 
@@ -101,8 +102,9 @@ function loadprev() {
 
 $('body').on('click', '#loadprev', function () {
   loadprev();
-  wavesurfer.playPause();
-
+    wavesurfer.on('ready', function () {
+    wavesurfer.play();
+  });
 });
 
 navigator.mediaSession.setActionHandler('previoustrack', function () {
