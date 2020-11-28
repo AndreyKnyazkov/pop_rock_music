@@ -30,6 +30,7 @@
       &-back
         display: inline-block
         margin-right: 38px
+        cursor: pointer
       &-play
         display: inline-block
         margin-bottom: 0px
@@ -37,13 +38,16 @@
         position: relative
         margin-bottom: 0.5px
         margin-bottom: 1px
+        cursor: ponter
         svg
           width: 15px
           height: 15px
         &:hover
           transition: 2s
+          cursor: pointer
           &::before
             position: absolute
+            cursor: pointer
             content: ''
             background: #F7FAFC
             right: 0
@@ -57,26 +61,65 @@
       &-next
         display: inline-block
         margin-left: 34px
+        cursor: pointer
     &__img 
       width: 56px
       height: 56px
       border-radius: 3px
     &__block
       +Bold
-      padding: 0px 10px 0px 20px
+      margin: 0px 10px 0px 20px
       width: 200px
       max-width: 200px
+      max-width: calc(100% - 70px)
       &-name
         font-size: 15px
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
       &-author
         font-size: 11px
         color: #91969E
         margin-top: 9px
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
   &-duration
     +Bold
     font-size: 12px
     color: #919698
     margin-left: 5px
-#playpause
-  svg
-    
+@media ( max-width: 768px )
+  .playthis-wave
+    margin: 0px 20px
+@media ( max-width: 600px )
+  .playthis
+    &-block
+      width: 100%
+      justify-content: space-between
+    &-wave
+      display: none
+    &-duration
+      display: none
+    &-information
+      width: 50%
+      &__nav
+        margin-right: 0
+        &-next
+          margin-left: 18px
+        &-back
+          margin-right: 22px
+      &__block
+        width: 100%
+        max-width: 100%
+        max-width: calc(100% - 70px)
+        &-name
+          overflow: hidden
+          white-space: nowrap
+          text-overflow: ellipsis
+          font-size: 13px
+        &-author
+          overflow: hidden
+          white-space: nowrap
+          text-overflow: ellipsis
+          font-size: 12px

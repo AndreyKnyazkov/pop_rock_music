@@ -31,6 +31,22 @@ var ChromeSamples = {
   }
 };
 
+//for use playlist
+const wavethis = document.querySelectorAll('.wavethis'),
+wavethisBlock = document.querySelector('.wavethis-block');
+
+wavethis.forEach((elem, i) => {
+  elem.addEventListener('click', (event) => {
+    wavesurfer.load(playlist[i]);
+    wavesurfer.on('ready', function () {
+      wavesurfer.play();
+  });
+  });
+});
+
+console.log(wavethis);
+console.log(wavethisBlock);
+
 
 if (!navigator.mediaSession) {
   ChromeSamples.setStatus('The Media Session API is not yet available. Try Chrome for Android.');
@@ -67,7 +83,7 @@ var wavesurfer = WaveSurfer.create({
 var playlist = getAwesomePlaylist();
 console.log(playlist);
 var index = 0;
-console.log(index);
+//console.log(index);
 // LOAD FIRST TRACK
 wavesurfer.load(playlist[index]);
 
@@ -234,24 +250,14 @@ function updateMetadata() {
 function getAwesomePlaylist() {
 //var BASE_URL = 'https://storage.googleapis.com/media-session/';
 
-  const arr = ['./audio/After-Dark.mp3', './audio/Into-Nothing.mp3', './audio/London.mp3', './audio/The-Rose-of-Versailles.mp3'];
+  const allTrack = document.querySelectorAll('.wavethis');  
 
-    const heroes = arr.reduce((accum, item, g, f) => {
-      return f;
+  const arrOfTracks = Array.from(allTrack).reduce((accum, item, g, f) => {
+      //pish data attr to reduce accum
+      accum.push(item.dataset.wave);
+      return accum;
       }, []);
-      console.log(heroes);
-    return heroes;
-//   return [
-//   {
-//     src: './audio/After-Dark.mp3',
-//   }, {
-//     src: './audio/Into-Nothing.mp3',
-//   }, {
-//     src: './audio/London.mp3',
-//   }, {
-//     src: './audio/The-Rose-of-Versailles.mp3',
-//   }
-// ];
+      return arrOfTracks;
 }
 
 //for load track to on click wavesurfer.load(playlist[index])
