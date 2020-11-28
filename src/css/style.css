@@ -2226,7 +2226,7 @@ img {
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
     top: 9%;
-    z-index: 555;
+    z-index: 2;
   }
 }
 
