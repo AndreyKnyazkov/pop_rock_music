@@ -3,24 +3,31 @@ var ChromeSamples = {
     var line = Array.prototype.slice.call(arguments).map(function (argument) {
       return typeof argument === 'string' ? argument : JSON.stringify(argument);
     }).join(' ');
-
+    if (document.querySelector('#log')) {
     document.querySelector('#log').textContent += line + '\n';
+    }
   },
 
   clearLog: function () {
+    if (document.querySelector('#log')) {
     document.querySelector('#log').textContent = '';
+    }
   },
 
   setStatus: function (status) {
+    if (document.querySelector('#status')) {
     document.querySelector('#status').textContent = status;
+    }
   },
 
   setContent: function (newContent) {
+    if (document.querySelector('#content')) {
     var content = document.querySelector('#content');
     while (content.hasChildNodes()) {
       content.removeChild(content.lastChild);
     }
     content.appendChild(newContent);
+    }
   }
 };
 
@@ -49,9 +56,11 @@ $(window).resize(function () {
 
 var wavesurfer = WaveSurfer.create({
   container: '#waveform',
-  waveColor: '#D2EDD4',
-  progressColor: '#46B54D',
-  minPxPerSec: 1
+  waveColor: '#E0DFE0',
+  progressColor: '#27282A',
+  minPxPerSec: 1,
+  barWidth: 1,
+  height: 25,
 });
 
 
@@ -63,7 +72,19 @@ console.log(index);
 wavesurfer.load(playlist[index]);
 
 
-
+function getTime() {
+  wavesurfer.on('audioprocess', function() {
+    if(wavesurfer.isPlaying()) {
+      if (document.getElementById('time-current')) {
+        var totalTime = wavesurfer.getDuration(),
+            currentTime = wavesurfer.getCurrentTime(),
+            remainingTime = totalTime - currentTime;
+        
+        document.getElementById('time-current').innerText = currentTime.toFixed(0);
+    }
+    }
+});
+}
 
 // PLAY PAUSE
 function playAudio() {
@@ -78,18 +99,35 @@ $('body').on('click', '#playpause', function () {
 
 navigator.mediaSession.setActionHandler('play', function () {
   wavesurfer.play();
+  getTime();
 });
 
 navigator.mediaSession.setActionHandler('pause', function () {
   wavesurfer.playPause();
+  getTime();
 });
 //set play
 wavesurfer.on('play', function () {
-  $('#playpause').html('<i class="fa fa-pause"></i> Pause');
+  $('#playpause').html(`<svg width="15" height="15" style="transform: translateX(-1px)" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.36571 0H1.25929C0.563924 0 0 0.395675 0 0.883578V14.1164C0 14.6043 0.563924 15 1.25929 15H4.36571C5.06108 15 5.625 14.6043 5.625 14.1164V0.883578C5.62504 0.395675 5.06112 0 4.36571 0Z" fill="black"/>
+<path d="M13.7407 0H10.6343C9.93896 0 9.375 0.395675 9.375 0.883578V14.1164C9.375 14.6043 9.93892 15 10.6343 15H13.7407C14.436 15 15 14.6043 15 14.1164V0.883578C15 0.395675 14.4361 0 13.7407 0Z" fill="black"/>
+</svg>
+
+`);
+  getTime();
 });
 //set pause
 wavesurfer.on('pause', function () {
-  $('#playpause').html('<i class="fa fa-play"></i> Play');
+  $('#playpause').html(`<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<path d="M3.19042 0.330738C1.83809 -0.44498 0.741699 0.190498 0.741699 1.74898V13.2499C0.741699 14.81 1.83809 15.4446 3.19042 14.6696L13.2428 8.90465C14.5956 8.12866 14.5956 6.87143 13.2428 6.09562L3.19042 0.330738Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="15" height="15" fill="white"/>
+</clipPath>
+</defs>
+</svg>`);
 });
 
 // PREVIOUS TRACK
@@ -104,12 +142,16 @@ $('body').on('click', '#loadprev', function () {
   loadprev();
     wavesurfer.on('ready', function () {
     wavesurfer.play();
+    getTime();
   });
+  //sm
+
 });
 
 navigator.mediaSession.setActionHandler('previoustrack', function () {
   // play previous track works if there is a playlist
   loadprev();
+  
 });
 
 
@@ -128,6 +170,7 @@ wavesurfer.on('finish', function () {
   wavesurfer.on('ready', function () {
     wavesurfer.play();
   });
+  getTime();
 });
 
 $('body').on('click', '#loadnext', function () {
@@ -136,12 +179,12 @@ $('body').on('click', '#loadnext', function () {
   wavesurfer.on('ready', function () {
     wavesurfer.play();
   });
+  getTime();
 });
 
 navigator.mediaSession.setActionHandler('nexttrack', function () {
   // play next track works if there is a playlist
   loadnext();
-  console.log('loaded 2');
 });
 
 // SEEK BACKWARD

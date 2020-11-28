@@ -3606,4 +3606,135 @@ img {
     font-size: 45px;
   }
 }
+
+.playthis {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px 18px;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px;
+}
+
+.playthiss {
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.playthis-wave {
+  width: 100%;
+  margin: 0px 50px;
+}
+
+.playthis-wave wave {
+  overflow: hidden !important;
+}
+
+.playthis-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.playthis-information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.playthis-information__nav {
+  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.playthis-information__nav-back {
+  display: inline-block;
+  margin-right: 38px;
+}
+
+.playthis-information__nav-play {
+  display: inline-block;
+  margin-bottom: 0px;
+  z-index: 1;
+  position: relative;
+  margin-bottom: 0.5px;
+  margin-bottom: 1px;
+}
+
+.playthis-information__nav-play svg {
+  width: 15px;
+  height: 15px;
+}
+
+.playthis-information__nav-play:hover {
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.playthis-information__nav-play:hover::before {
+  position: absolute;
+  content: '';
+  background: #F7FAFC;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  left: 50%;
+  top: -16px;
+  margin-left: -25px;
+  z-index: -1;
+  border-radius: 50px;
+}
+
+.playthis-information__nav-next {
+  display: inline-block;
+  margin-left: 34px;
+}
+
+.playthis-information__img {
+  width: 56px;
+  height: 56px;
+  border-radius: 3px;
+}
+
+.playthis-information__block {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  padding: 0px 10px 0px 20px;
+  width: 200px;
+  max-width: 200px;
+}
+
+.playthis-information__block-name {
+  font-size: 15px;
+}
+
+.playthis-information__block-author {
+  font-size: 11px;
+  color: #91969E;
+  margin-top: 9px;
+}
+
+.playthis-duration {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #919698;
+  margin-left: 5px;
+}
 /*# sourceMappingURL=style.css.map */

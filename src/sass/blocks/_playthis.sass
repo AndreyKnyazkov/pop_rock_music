@@ -1,0 +1,82 @@
+.playthis
+  display: flex
+  padding: 15px 18px
+  display: flex
+  align-items: center
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px
+  &s
+    background: #fff
+    position: fixed
+    bottom: 0
+    width: 100%;
+    z-index: 2
+  &-wave
+    width: 100%
+    margin: 0px 50px
+    wave
+      overflow: hidden!important
+      wave
+        canvas
+  &-block
+    display: flex
+  &-information
+    display: flex
+    align-items: center
+    &__nav
+      margin-right: 20px
+      display: flex
+      align-items: center
+      position: relative      
+      &-back
+        display: inline-block
+        margin-right: 38px
+      &-play
+        display: inline-block
+        margin-bottom: 0px
+        z-index: 1
+        position: relative
+        margin-bottom: 0.5px
+        margin-bottom: 1px
+        svg
+          width: 15px
+          height: 15px
+        &:hover
+          transition: 2s
+          &::before
+            position: absolute
+            content: ''
+            background: #F7FAFC
+            right: 0
+            width: 48px
+            height: 48px
+            left: 50%
+            top: -16px
+            margin-left: -25px            
+            z-index: -1
+            border-radius: 50px
+      &-next
+        display: inline-block
+        margin-left: 34px
+    &__img 
+      width: 56px
+      height: 56px
+      border-radius: 3px
+    &__block
+      +Bold
+      padding: 0px 10px 0px 20px
+      width: 200px
+      max-width: 200px
+      &-name
+        font-size: 15px
+      &-author
+        font-size: 11px
+        color: #91969E
+        margin-top: 9px
+  &-duration
+    +Bold
+    font-size: 12px
+    color: #919698
+    margin-left: 5px
+#playpause
+  svg
+    
