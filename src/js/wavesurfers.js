@@ -31,21 +31,61 @@ var ChromeSamples = {
   }
 };
 
-//for use playlist
+//for use playlist to click on a track
 const wavethis = document.querySelectorAll('.wavethis'),
-wavethisBlock = document.querySelector('.wavethis-block');
+wavethisTrack = document.querySelectorAll('.wavethis .list-right__information-img'),
+wavethisBlock = document.querySelector('.wavethis-block'),
+wavethisTitle = document.querySelectorAll('.wavethis-title'),
+wavethisDspr = document.querySelectorAll('.wavethis-dspr'),
+playthisToName = document.querySelector('.playthis-information__block-name'),
+playthisToAuthor = document.querySelector('.playthis-information__block-author'),
+wavethisImg = document.querySelectorAll('.wavethis-img'),
+playthisImg = document.querySelector('.playthis-img'),
+playthisImgConainer = document.querySelectorAll('.wavethis-img-container');
 
-wavethis.forEach((elem, i) => {
-  elem.addEventListener('click', (event) => {
+console.log(playthisImgConainer);
+
+wavethisTrack.forEach((elem, i) => {
+  elem.addEventListener('click', (event) => {    
+
+    if (elem === document.querySelector('.wavethisplaying')) {
+      wavesurfer.playPause();
+      elem.classList.add('wavethispause');
+      elem.classList.remove('wavethisplaying');
+
+    } else if (elem === document.querySelector('.wavethispause')) {
+      wavesurfer.playPause();
+      elem.classList.add('wavethisplaying');
+      elem.classList.remove('wavethispause');
+    } else {
+      console.log('fsdf');
+    //set new background
+    wavethis.forEach((item, i) => {
+      item.setAttribute('style', 'background: initial');
+      playthisImgConainer[i].classList.remove('wavethisplaying');
+    });
+    wavethis[i].style.background = '#EDF2F5';
+    
+    playthisImgConainer[i].classList.add('wavethisplaying');
+
+    document.querySelector('.playthiss').style.display = 'block';
     wavesurfer.load(playlist[i]);
+    //set author and name
+    playthisToName.textContent = wavethisTitle[i].textContent;
+    playthisToAuthor.textContent = wavethisDspr[i].textContent;
+    let attrForReplace = wavethisImg[i].getAttribute('src');
+    
+    playthisImg.setAttribute('src', wavethisImg[i].getAttribute('src'));
     wavesurfer.on('ready', function () {
       wavesurfer.play();
   });
+  //to change index
+  }
+  index = i;
+  
   });
 });
 
-console.log(wavethis);
-console.log(wavethisBlock);
 
 
 if (!navigator.mediaSession) {
@@ -67,9 +107,6 @@ $(window).resize(function () {
   wavesurfer.drawBuffer();
 });
 
-
-
-
 var wavesurfer = WaveSurfer.create({
   container: '#waveform',
   waveColor: '#E0DFE0',
@@ -85,7 +122,7 @@ console.log(playlist);
 var index = 0;
 //console.log(index);
 // LOAD FIRST TRACK
-wavesurfer.load(playlist[index]);
+//wavesurfer.load(playlist[index]);
 
 
 function getTime() {
@@ -111,6 +148,17 @@ function playAudio() {
 // PLAY
 $('body').on('click', '#playpause', function () {
   playAudio();
+  
+  if (document.querySelector('.wavethisplaying')) {
+    console.log(123);
+    document.querySelector('.wavethisplaying').classList.add('wavethispause');
+    document.querySelector('.wavethispause').classList.remove('wavethisplaying');
+    
+  } else if (document.querySelector('.wavethispause')) {
+    document.querySelector('.wavethispause').classList.add('wavethisplaying');
+    document.querySelector('.wavethisplaying').classList.remove('wavethispause');   
+    
+  }
 });
 
 navigator.mediaSession.setActionHandler('play', function () {
@@ -144,14 +192,34 @@ wavesurfer.on('pause', function () {
 </clipPath>
 </defs>
 </svg>`);
+
 });
+
+
+
+
+function forNextPrev() {
+  //#EDF2F5
+  wavethis.forEach((elem, ind) => {
+    elem.setAttribute('style', 'background: initial');
+    playthisImgConainer[ind].classList.remove('wavethispause');
+    playthisImgConainer[ind].classList.remove('wavethisplaying');
+  });
+  playthisImgConainer[index].classList.add('wavethisplaying');
+
+  wavethis[index].setAttribute('style', 'background: #EDF2F5');
+}
 
 // PREVIOUS TRACK
 function loadprev() {
   ChromeSamples.log('> User clicked "Previous Track" icon.');
   index = (index - 1 + playlist.length) % playlist.length;
   wavesurfer.load(playlist[index]);
-  
+  //set name
+  playthisToName.textContent = wavethisTitle[index].textContent;
+  playthisToAuthor.textContent = wavethisDspr[index].textContent;
+
+  forNextPrev();
 }
 
 $('body').on('click', '#loadprev', function () {
@@ -170,15 +238,16 @@ navigator.mediaSession.setActionHandler('previoustrack', function () {
   
 });
 
-
-
-
-
 // NEXT TRACK
 function loadnext() {
   ChromeSamples.log('> User clicked "Next Track" icon.');
   index = (index + 1) % playlist.length;
   wavesurfer.load(playlist[index]);
+  
+  playthisToName.textContent = wavethisTitle[index].textContent;
+  playthisToAuthor.textContent = wavethisDspr[index].textContent;
+
+  forNextPrev();
 }
 
 wavesurfer.on('finish', function () {

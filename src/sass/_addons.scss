@@ -1,3 +1,41 @@
+.wavethisplaying::after {
+  position: absolute;
+  content: url("../img/pause-it.svg");
+  left: 6px;
+  bottom: 0;
+  right: 0;
+  top: 6px;
+}
+
+.wavethisplaying:hover::after {
+  position: absolute;
+  content: url("../img/pause-it.svg");
+  left: 6px;
+  bottom: 0;
+  right: 0;
+  top: 6px;
+  z-index: 1;
+}
+
+.wavethispause::after {
+  position: absolute;
+  content: url("../img/play-it.svg");
+  left: 6px;
+  bottom: 0;
+  right: 0;
+  top: 6px;
+}
+
+.wavethispause:hover::after {
+  position: absolute;
+  content: url("../img/play-it.svg");
+  left: 6px;
+  bottom: 0;
+  right: 0;
+  top: 6px;
+  z-index: 1;
+}
+
 body {
   font-feature-settings: 'pnum' on, 'lnum' on, 'kern' off;
   margin-bottom: 110px;
