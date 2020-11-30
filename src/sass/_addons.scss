@@ -1,3 +1,7 @@
+.list-left__copy {
+  display: none!important;
+}
+
 .wavethisplaying::after {
   position: absolute;
   content: url("../img/pause-it.svg");

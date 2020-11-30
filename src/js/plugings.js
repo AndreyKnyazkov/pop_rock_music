@@ -119,10 +119,40 @@ accItemToClick.forEach((elem, index, node) => {
 
 accordeon('.playlist-about__tabs-item', 'playlist-about__tabs-item_active', '.playlist', 'playlist_active');
 
+const burgerMenuOpen = (open, close, menu) => {  
+  const openWindow = document.querySelector(open),
+        closeWindow = document.querySelector(close),
+        menuIt = document.querySelector(menu);
+  //to find out the size of the window
+  //findSize();
+  //window.addEventListener('resize', findSize);
 
+  function findSize(){
+      let widthWindow = document.documentElement.clientWidth,
+          heightWindow = document.documentElement.clientHeight;
 
+      if (widthWindow < 768) {
+        console.log('works');
+        menuIt.classList.remove('menu-open');
+        document.querySelector('body').style.overflow = 'initial';
+      }
+    }
 
+    openWindow.addEventListener('click', (event) => {
+      menuIt.classList.remove('menu-closest');
+      menuIt.classList.add('menu-open');
+      document.querySelector('body').style.overflow = 'hidden';
+    });
 
+    closeWindow.addEventListener('click', (event) => {
+      menuIt.classList.remove('menu-open');
+      menuIt.classList.add('menu-closest');
+      document.querySelector('body').style.overflow = 'initial';
+    });
+    
+};
+
+burgerMenuOpen('.openmenu', '.menu-close', '.menu');
 
 
 
