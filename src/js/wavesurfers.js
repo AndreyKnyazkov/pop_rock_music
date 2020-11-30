@@ -45,10 +45,12 @@ playthisImgConainer = document.querySelectorAll('.wavethis-img-container');
 
 console.log(playthisImgConainer);
 
+
 wavethisTrack.forEach((elem, i) => {
   elem.addEventListener('click', (event) => {    
 
     if (elem === document.querySelector('.wavethisplaying')) {
+      
       wavesurfer.playPause();
       elem.classList.add('wavethispause');
       elem.classList.remove('wavethisplaying');
@@ -58,7 +60,16 @@ wavethisTrack.forEach((elem, i) => {
       elem.classList.add('wavethisplaying');
       elem.classList.remove('wavethispause');
     } else {
-      console.log('fsdf');
+      //to remove repeat elements
+      playthisImgConainer.forEach((el) => {
+        if (el.classList.contains("wavethispause")) {
+          el.classList.remove("wavethispause");
+        }
+        if (el.classList.contains("wavethisplaying")) {
+          el.classList.remove("wavethisplaying");
+        }
+      });
+      
     //set new background
     wavethis.forEach((item, i) => {
       item.setAttribute('style', 'background: initial');
@@ -128,16 +139,41 @@ var index = 0;
 function getTime() {
   wavesurfer.on('audioprocess', function() {
     if(wavesurfer.isPlaying()) {
-      if (document.getElementById('time-current')) {
-        var totalTime = wavesurfer.getDuration(),
+      //if (document.getElementById('time-current')) {
+        let totalTime = wavesurfer.getDuration(),
             currentTime = wavesurfer.getCurrentTime(),
-            remainingTime = totalTime - currentTime;
-        
-        document.getElementById('time-current').innerText = currentTime.toFixed(0);
-    }
+            remainingTime = totalTime - currentTime,
+            timeForWork = currentTime.toFixed(0),            
+            containerForTime = document.getElementById('time-current');
+            timeForWork = timeForWork.toString();
+            
+            if (timeForWork < 10) {
+              containerForTime.textContent = `00:0${timeForWork}`;
+            } else if (timeForWork >= 10) {
+              containerForTime.textContent = `00:${timeForWork}`;
+              if (timeForWork >= 60) {
+              let getMinutes = Math.floor(timeForWork / 60),              
+              getSeconds = Math.floor(timeForWork - getMinutes * 60);
+
+              containerForTime.textContent = `0${getMinutes}:0${getSeconds}`;
+              if (getSeconds > 10) {
+                containerForTime.textContent = `0${getMinutes}:${getSeconds}`;
+              }
+              // if (getSeconds < 10) {
+              //   containerForTime.textContent = `0${getMinutes}:0${getSeconds}`;
+              // } else {
+              //   containerForTime.textContent = `0${getMinutes}:${getSeconds}`;
+              // }
+            }
+            } 
+            
+
+            
+    //}
     }
 });
 }
+getTime();
 
 // PLAY PAUSE
 function playAudio() {
@@ -150,7 +186,7 @@ $('body').on('click', '#playpause', function () {
   playAudio();
   
   if (document.querySelector('.wavethisplaying')) {
-    console.log(123);
+    //console.log(123);
     document.querySelector('.wavethisplaying').classList.add('wavethispause');
     document.querySelector('.wavethispause').classList.remove('wavethisplaying');
     
